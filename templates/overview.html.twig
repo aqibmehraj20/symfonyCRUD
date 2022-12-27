@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for person in data %}
+                <tr  onclick="document.location.href='/update_person/{{ person.id }}'">
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.address }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" onclick="document.location.href='/create_person'">create</button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+
+        {% block form %}
+            <div class="form-group">
+                {{ form_start(form) }}
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.address) }}
+                {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">submit</button>
+                {% if id is defined %}
+                    <button class="btn btn-danger" onclick="document.location.href='/delete_person/{{ id }}'"> delete
+                    </button>
+                {% endif %}
+            </div>
+            {{ form_end(form) }}
+        {% endblock %}
+
+    </div>
+{% endblock %}
