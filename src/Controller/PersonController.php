@@ -8,6 +8,7 @@ use App\Entity\Person;
 use App\Form\PersonFormType;
 use App\Repository\PersonRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Symfony\Bridge\Twig\AppVariable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +24,7 @@ final class PersonController extends AbstractController
     {
     }
 
-    #[Route('/', name: 'overview')]
+    #[Route('/overview', name: 'overview')]
     public function overview(): Response
     {
         $person = $this->repository->findAll();
