@@ -1,0 +1,7 @@
+[2023-01-03T07:46:19.946660+00:00] name.WARNING: Foo [] []
+[2023-01-03T07:46:53.910958+00:00] name.WARNING: Foo [] []
+[2023-01-03T07:50:40.282738+00:00] name.WARNING: your log is missing [] []
+[2023-01-03T07:51:18.359008+00:00] name.INFO: your log is missing [] []
+[2023-01-03T07:52:40.860047+00:00] PersonController.INFO: your log is missing [] []
+[2023-01-03T08:49:38.975222+00:00] PersonController.INFO: your log is missing [] []
+[2023-01-04T04:09:18.646686+00:00] PersonController.INFO: your log is missing [] []

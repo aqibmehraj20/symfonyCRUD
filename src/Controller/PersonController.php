@@ -8,12 +8,13 @@ use App\Entity\Person;
 use App\Form\PersonFormType;
 use App\Repository\PersonRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Symfony\Bridge\Twig\AppVariable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 final class PersonController extends AbstractController
 {
@@ -22,6 +23,9 @@ final class PersonController extends AbstractController
         private PersonRepository       $repository,
     )
     {
+        $log = new Logger('PersonController');
+        $log->pushHandler(new StreamHandler('var/log/your.log', Level::Info));
+        $log->info('your log is missing');
     }
 
     #[Route('/overview', name: 'overview')]
